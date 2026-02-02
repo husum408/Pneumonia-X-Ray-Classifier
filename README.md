@@ -37,10 +37,10 @@ Activation Heatmap:
 
 <img width="520" height="531" alt="image" src="https://github.com/user-attachments/assets/f0251ec1-1a9f-43aa-abee-e84471566c75" />
 
-Sensitivity: 0.87
-Specificity: 0.91
-Positive Predictive Value: 0.96
-Negative Predictive Value: 0.73
+* Sensitivity: 0.87
+* Specificity: 0.91
+* Positive Predictive Value: 0.96
+* Negative Predictive Value: 0.73
 
 # Limitations
 The dataset used for this project is relatively small and is unbalanced between classes. Certain x-ray scans also include scanner artifacts that could potentially impact the model's learning. The model is only capable of performing binary classification and cannot distinguish between bacterial and viral pneumonia. This model is not clinically validated.
