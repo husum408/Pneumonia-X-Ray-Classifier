@@ -57,14 +57,14 @@ The dataset used for this project is relatively small and is unbalanced between 
 * python main.py
 
 Repository Structure
-|--- archive/            # original dataset (not included)
-|--- reorganized_data/   # shuffled data (not included)
-|--- models/             # trained models
-|--- results/            # stores figures from training and evaluation
-|--- dataset.py          # prepares dataset
-|--- train.py            # training script
-|--- eval.py             # Grad-CAM, confusion matrix, and ROC Curve scripts
-|--- main.py     
-|--- requirements.txt
-|--- README.md
+* archive/            # original dataset (not included)
+* reorganized_data/   # shuffled data (not included)
+* models/             # trained models
+* results/            # stores figures from training and evaluation
+* dataset.py          # prepares dataset
+* train.py            # training script
+* eval.py             # Grad-CAM, confusion matrix, and ROC Curve scripts
+* main.py     
+* requirements.txt
+* README.md
 
