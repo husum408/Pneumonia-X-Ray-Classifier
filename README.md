@@ -62,10 +62,11 @@ Repository Structure
 + reorganized_data/   # shuffled data (not included)
 + models/             # trained models
 + results/            # stores figures from training and evaluation
++ cnn.py              # model architecture
 + dataset.py          # prepares dataset
 + train.py            # training script
 + eval.py             # Grad-CAM, confusion matrix, and ROC Curve scripts
-+ main.py     
++ main.py
 + requirements.txt
 + README.md
 
