@@ -60,7 +60,7 @@ The dataset used for this project is relatively small and is unbalanced between 
 Repository Structure
 + archive/            # original dataset (not included)
 + reorganized_data/   # shuffled data (not included)
-+ models/             # trained models
++ models/             # trained models (contains my pretrained model)
 + results/            # stores figures from training and evaluation
 + cnn.py              # model architecture
 + dataset.py          # prepares dataset
