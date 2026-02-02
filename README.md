@@ -26,6 +26,7 @@ Training Setup:
 The following are the results from the model's evaluation on the test dataset.
 
 Accuracy: 88%
+
 ROC Curve:
 
 <img width="568" height="422" alt="image" src="https://github.com/user-attachments/assets/d0fbace4-a5e7-4383-82ae-c6d14292c38f" />
