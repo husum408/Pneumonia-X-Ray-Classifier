@@ -22,7 +22,10 @@ Training Setup:
 * Augmentation: Random rotation from -15 to 15 degrees
 
 # Results
-Test Accuracy: 88%
+
+The following are the results from the model's evaluation on the test dataset.
+
+Accuracy: 88%
 ROC Curve:
 
 <img width="568" height="422" alt="image" src="https://github.com/user-attachments/assets/d0fbace4-a5e7-4383-82ae-c6d14292c38f" />
@@ -36,6 +39,7 @@ Confusion Matrix:
 Activation Heatmap:
 
 <img width="520" height="531" alt="image" src="https://github.com/user-attachments/assets/f0251ec1-1a9f-43aa-abee-e84471566c75" />
+
 
 * Sensitivity: 0.87
 * Specificity: 0.91
