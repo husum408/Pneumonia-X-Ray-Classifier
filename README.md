@@ -56,8 +56,8 @@ The dataset used for this project is relatively small and is unbalanced between 
 * Download the dataset: https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia.
 * Download this project
 * Delete this project's empty 'archive' folder and replace it with the unzipped 'archive' folder you downloaded
-* C:\...\Downloads\Pneumonia-X-Ray-Classifier-main\Pneumonia-X-Ray-Classifier-main> pip install -r requirements.txt
-* python main.py
+* In Command Prompt or Power Shell: C:\...\Downloads\Pneumonia-X-Ray-Classifier-main\Pneumonia-X-Ray-Classifier-main> pip install -r requirements.txt
+* C:\...\Downloads\Pneumonia-X-Ray-Classifier-main\Pneumonia-X-Ray-Classifier-main> python main.py
 
 
 Repository Structure
