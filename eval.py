@@ -192,7 +192,7 @@ def grad_cam(model, img, eval_folder_path):
     
     plt.subplot(1, 3, 1)
     plt.title('Activation Heatmap')
-    plt.imshow(heatmap, cmap='viridis')
+    plt.imshow(heatmap_new, cmap='viridis')
     
     plt.subplot(1, 3, 2)
     plt.title('Original Image')
@@ -287,4 +287,5 @@ def evaluate(model, dataloader, model_name):
 
 
     
+
 
