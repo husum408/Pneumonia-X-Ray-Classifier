@@ -184,7 +184,7 @@ def grad_cam(model, img, eval_folder_path):
     
     heatmap_new = np.uint8(255 * heatmap_new)
     
-    heatmap_new = cv2.applyColorMap(heatmap_new, cv2.COLORMAP_JET)
+    heatmap_new = cv2.applyColorMap(heatmap_new, cv2.COLORMAP_VIRIDIS)
     
     superimposed_img = heatmap_new * 0.0025 + ((numpy_img + 1) / 2) 
     
@@ -192,7 +192,7 @@ def grad_cam(model, img, eval_folder_path):
     
     plt.subplot(1, 3, 1)
     plt.title('Activation Heatmap')
-    plt.imshow(heatmap_new)
+    plt.imshow(heatmap, cmap='viridis')
     
     plt.subplot(1, 3, 2)
     plt.title('Original Image')
@@ -287,3 +287,4 @@ def evaluate(model, dataloader, model_name):
 
 
     
+
