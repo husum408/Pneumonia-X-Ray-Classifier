@@ -184,7 +184,7 @@ def loss_and_accuracy_curves(results: dict, num_epochs: int, save_name: str):
 #   save_name: The trained model will be saved in the 'models' folder under this name
 #
 
-def train(train_dataloader, val_dataloader, lr_schedule: list, model, save_name: str):
+def train(train_dataloader, val_dataloader, model, save_name: str, num_epochs: int = 5):
 
     # Use GPU for speed if available, otherwise use CPU
 
@@ -194,24 +194,20 @@ def train(train_dataloader, val_dataloader, lr_schedule: list, model, save_name:
 
     torch.manual_seed(42) # A manual seed was chosen for consistency but isn't required
 
-    loss_fn = torch.nn.BCEWithLogitsLoss(pos_weight=torch.tensor([0.6])) # a pos_weight of 0.6 was chosen to 
-                                                                         # compensate for the unbalanced dataset
+    loss_fn = torch.nn.BCEWithLogitsLoss() 
 
+    optimizer = torch.optim.Adam(params=model.parameters(), lr=5e-4, weight_decay=0)
+    
     start_time = timer()
-
-    num_epochs = len(lr_schedule)
 
     results = {'train_loss': [],
         'train_acc': [],
         'eval_loss': [],
         'eval_acc': []}
 
-    # Iterate through lr_schedule, performing one train step and eval step using
-    # each learning rate
+    # Iterate through epochs, performing one train step and eval step for each epoch
 
     for epoch in range(0, num_epochs): 
-
-        optimizer = torch.optim.SGD(params=model.parameters(), lr=lr_schedule[epoch])
 
         print(f'Epoch: {epoch + 1}')
 
@@ -242,4 +238,5 @@ def train(train_dataloader, val_dataloader, lr_schedule: list, model, save_name:
     # Todo: save loss and accuracy to a metrics file
 
     torch.save(model.state_dict(), 'models/' + save_name)
+
 
