@@ -193,7 +193,6 @@ def grad_cam(model, img, eval_folder_path):
     plt.subplot(1, 3, 1)
     plt.title('Activation Heatmap')
     plt.imshow(heatmap_new)
-    plt.colorbar()
     
     plt.subplot(1, 3, 2)
     plt.title('Original Image')
@@ -256,6 +255,8 @@ def evaluate(model, dataloader, model_name):
 
     manual_seed(42) # This is implemented for consistency but can be removed
 
+    print(f'Evaluation of {model_name}:\n')
+    
     predictions = []
     labels = []
 
@@ -283,5 +284,6 @@ def evaluate(model, dataloader, model_name):
     grad_cam(model, img, eval_folder_path)
 
     return
+
 
     
