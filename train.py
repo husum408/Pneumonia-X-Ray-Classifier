@@ -179,9 +179,9 @@ def loss_and_accuracy_curves(results: dict, num_epochs: int, save_name: str):
 # Args:
 #   train_dataloader: Training dataset
 #   val_dataloader: Validation dataset
-#   lr_schedule: List of learning rates to be used as learning rate schedule
 #   model: Model to be trained
 #   save_name: The trained model will be saved in the 'models' folder under this name
+#   num_epochs: The number of epochs the model will be trained for
 #
 
 def train(train_dataloader, val_dataloader, model, save_name: str, num_epochs: int = 5):
@@ -238,5 +238,6 @@ def train(train_dataloader, val_dataloader, model, save_name: str, num_epochs: i
     # Todo: save loss and accuracy to a metrics file
 
     torch.save(model.state_dict(), 'models/' + save_name)
+
 
 
