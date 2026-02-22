@@ -182,9 +182,10 @@ def loss_and_accuracy_curves(results: dict, num_epochs: int, save_name: str):
 #   model: Model to be trained
 #   save_name: The trained model will be saved in the 'models' folder under this name
 #   num_epochs: The number of epochs the model will be trained for
+#   lr: The learning rate to be used for training
 #
 
-def train(train_dataloader, val_dataloader, model, save_name: str, num_epochs: int = 5):
+def train(train_dataloader, val_dataloader, model, save_name: str, num_epochs: int = 5, lr: float = 5e-4):
 
     # Use GPU for speed if available, otherwise use CPU
 
@@ -196,7 +197,7 @@ def train(train_dataloader, val_dataloader, model, save_name: str, num_epochs: i
 
     loss_fn = torch.nn.BCEWithLogitsLoss() 
 
-    optimizer = torch.optim.Adam(params=model.parameters(), lr=5e-4, weight_decay=0)
+    optimizer = torch.optim.Adam(params=model.parameters(), lr=lr, weight_decay=0)
     
     start_time = timer()
 
@@ -238,6 +239,7 @@ def train(train_dataloader, val_dataloader, model, save_name: str, num_epochs: i
     # Todo: save loss and accuracy to a metrics file
 
     torch.save(model.state_dict(), 'models/' + save_name)
+
 
 
 
