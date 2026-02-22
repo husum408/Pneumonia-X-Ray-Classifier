@@ -13,41 +13,42 @@ Example chest X-ray images shown in this repository are derived from the publicl
 
 # Model
 Architecture: Custom CNN trained from scratch
-Loss Function: Binary Cross Entropy with Logits 
+Loss Function: Binary Cross-Entropy with Logits 
 Optimizer: Adam
 Training Setup: 
 * Train/val/test split: 70/15/15
 * Model: Custom CNN
 * Batch Size: 32
 * Augmentation: Random rotation from -15 to 15 degrees
-* Learning rate: 5e-4
-* Number of epochs: 15
+* Learning Rate: 5e-4
+* Number of Epochs: 15
 
 # Results
 
 The following are the results from the model's evaluation on the test dataset.
 
-Accuracy: 88%
+Accuracy: 95%
 
 ROC Curve:
 
-<img width="568" height="422" alt="image" src="https://github.com/user-attachments/assets/d0fbace4-a5e7-4383-82ae-c6d14292c38f" />
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/983a77b1-9980-43d5-880d-a6f3b0f0298e" />
 
-AUC: 0.956
+AUC: 0.982
 
 Confusion Matrix:
 
-<img width="555" height="415" alt="image" src="https://github.com/user-attachments/assets/4b20e468-32b5-4f82-b1b0-9fbde536ddbf" />
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/26bbe620-bdc4-4828-9f28-94ce4d7dbb08" />
 
 Activation Heatmap:
 
-<img width="520" height="531" alt="image" src="https://github.com/user-attachments/assets/f0251ec1-1a9f-43aa-abee-e84471566c75" />
+<img width="1200" height="400" alt="image" src="https://github.com/user-attachments/assets/032bbf6c-a2fc-420f-b5e0-e7d61af2f391" />
 
+Note: Heatmaps use the 'VIRIDIS' colormap, with activation values increasing from red to yellow/green to blue.
 
-* Sensitivity: 0.87
-* Specificity: 0.91
-* Positive Predictive Value: 0.96
-* Negative Predictive Value: 0.73
+* Sensitivity: 0.95
+* Specificity: 0.93
+* Positive Predictive Value: 0.97
+* Negative Predictive Value: 0.87
 
 # Limitations
 The dataset used for this project is relatively small and is unbalanced between classes. Certain x-ray scans also include scanner artifacts that could potentially impact the model's learning. The model is only capable of performing binary classification and cannot distinguish between bacterial and viral pneumonia. This model is not clinically validated.
