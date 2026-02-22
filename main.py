@@ -26,16 +26,18 @@ def main():
 
     num_epochs = 5
 
+    lr = 5e-4
+
     if Path('models/' + model_name).is_file() == True:
 
         model.load_state_dict(load('models/' + model_name, weights_only = False))
 
-        # train(train_dataloader, val_dataloader, model, model_name, num_epochs) -- uncomment to
+        # train(train_dataloader, val_dataloader, model, model_name, num_epochs, lr) -- uncomment to
         # continue training a pre-existing model.
 
     else:
 
-        train(train_dataloader, val_dataloader, model, model_name, num_epochs) # Trains a new model.
+        train(train_dataloader, val_dataloader, model, model_name, num_epochs, lr) # Trains a new model.
 
 
     final_evaluation = False # When ready for the final evaluation, set this to true to evaluate the
@@ -49,4 +51,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
