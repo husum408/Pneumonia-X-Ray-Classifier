@@ -51,7 +51,7 @@ Activation Heatmap:
 The dataset used for this project is relatively small and is unbalanced between classes. Certain x-ray scans also include scanner artifacts that could potentially impact the model's learning. The model is only capable of performing binary classification and cannot distinguish between bacterial and viral pneumonia. This model is not clinically validated.
 
 # How to run
-* Download the dataset from here: https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia.
+* Download the dataset: https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia.
 * Replace this project's empty 'archive' folder with the unzipped 'archive' folder you downloaded
 * pip install -r requirements.txt
 * python main.py
