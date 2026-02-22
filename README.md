@@ -13,13 +13,15 @@ Example chest X-ray images shown in this repository are derived from the publicl
 
 # Model
 Architecture: Custom CNN trained from scratch
-Loss Function: Binary Cross Entropy with Logits (pos_weight = 0.6)
-Optimizer: Stochastic Gradient Descent
+Loss Function: Binary Cross Entropy with Logits 
+Optimizer: Adam
 Training Setup: 
 * Train/val/test split: 70/15/15
 * Model: Custom CNN
 * Batch Size: 32
 * Augmentation: Random rotation from -15 to 15 degrees
+* Learning rate: 5e-4
+* Number of epochs: 15
 
 # Results
 
@@ -52,7 +54,7 @@ The dataset used for this project is relatively small and is unbalanced between 
 
 # How to run
 * Download the dataset: https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia.
-* Replace this project's empty 'archive' folder with the unzipped 'archive' folder you downloaded
+* Delete this project's empty 'archive' folder and replace it with the unzipped 'archive' folder you downloaded
 * pip install -r requirements.txt
 * python main.py
 
