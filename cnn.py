@@ -1,7 +1,6 @@
 from torch import nn
 
 class CNN(nn.Module):
-
     def __init__(self, input_shape: int, hidden_units: int, output_shape: int, kernel_size: int, padding: int, image_size_x: int, image_size_y: int):
         super().__init__()
         self.block_1 = nn.Sequential(
@@ -19,6 +18,8 @@ class CNN(nn.Module):
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2,
                          stride=2),
+        )
+        self.block_2 = nn.Sequential(
             nn.Conv2d(in_channels=hidden_units,
                       out_channels=hidden_units,
                       kernel_size=kernel_size,
@@ -32,36 +33,24 @@ class CNN(nn.Module):
                       padding=padding),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2,
-                         stride=2),
-            nn.Conv2d(in_channels=hidden_units,
-                      out_channels=int(hidden_units),
-                      kernel_size=kernel_size,
-                      stride=1,
-                      padding=padding),
-            nn.ReLU(),
-            nn.Conv2d(in_channels=int(hidden_units),
-                      out_channels=int(hidden_units),
-                      kernel_size=kernel_size,
-                      stride=1,
-                      padding=padding),
-            nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2,
-                         stride=2),
+                         stride=2)
+        )
+        self.features_conv = nn.Sequential(
+            self.block_1,
+            self.block_2,
+            self.block_2,
+            self.block_2[:-1]
         )
         self.classifier = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(in_features=int(hidden_units)*int(image_size_x/8)*int(image_size_y/8),
+            nn.Linear(in_features=int(hidden_units)*4,
                       out_features=output_shape)
         )
-
-        self.features_conv = self.block_1[:14]
 
         self.gradients = None
 
         self.max_pool = nn.MaxPool2d(kernel_size=2,
                                      stride=2)
-
-    # Hooks are later used to visualize activations
 
     def activations_hook(self, grad):
         self.gradients = grad
