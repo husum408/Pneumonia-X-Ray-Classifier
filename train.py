@@ -208,7 +208,7 @@ def train(train_dataloader, val_dataloader, model, save_name: str, num_epochs: i
 
     # Iterate through epochs, performing one train step and eval step for each epoch
 
-    print('Training...'\n)
+    print('Training...\n')
     
     for epoch in range(0, num_epochs): 
 
@@ -248,14 +248,10 @@ def train(train_dataloader, val_dataloader, model, save_name: str, num_epochs: i
     total_time_min = total_time // 60
     total_time_sec = int(total_time % 60)
 
-    print(f'Took {total_time_min} minutes and {total_time_sec} seconds')
+    print(f'Took {total_time_min} minutes and {total_time_sec} seconds\n')
 
     loss_and_accuracy_curves(results, num_epochs, save_name)
 
     # Todo: save loss and accuracy to a metrics file
 
     torch.save(model.state_dict(), 'models/' + save_name)
-
-
-
-
