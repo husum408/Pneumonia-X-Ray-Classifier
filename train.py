@@ -208,6 +208,8 @@ def train(train_dataloader, val_dataloader, model, save_name: str, num_epochs: i
 
     # Iterate through epochs, performing one train step and eval step for each epoch
 
+    print('Training...'\n)
+    
     for epoch in range(0, num_epochs): 
 
         epoch_start_time = timer()
@@ -253,6 +255,7 @@ def train(train_dataloader, val_dataloader, model, save_name: str, num_epochs: i
     # Todo: save loss and accuracy to a metrics file
 
     torch.save(model.state_dict(), 'models/' + save_name)
+
 
 
 
