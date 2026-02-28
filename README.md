@@ -60,6 +60,8 @@ The dataset used for this project is relatively small and is unbalanced between 
 * In Command Prompt or Power Shell: C:\...\Downloads\Pneumonia-X-Ray-Classifier-main\Pneumonia-X-Ray-Classifier-main> pip install -r requirements.txt
 * C:\...\Downloads\Pneumonia-X-Ray-Classifier-main\Pneumonia-X-Ray-Classifier-main> python main.py
 
+Note: The model is set to be evaluated on the val set by default. To recreate the data shown above, change the value of final_evaluation in main.py from False to True to evaluate the model on the held-out test set.
+
 
 Repository Structure
 + archive/            # original dataset (not included)
